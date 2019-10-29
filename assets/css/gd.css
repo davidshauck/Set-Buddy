@@ -52,4 +52,8 @@ body {
       font-size: 44px;
     }
 
+    body {
+        background-image: url("../images/spadtastics-sm.jpg");
+    }
+
 }
