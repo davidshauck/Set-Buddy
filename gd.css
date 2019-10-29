@@ -36,11 +36,20 @@ body {
 #title {
     text-align: center;
     color: white;
-    font-size: 60px;
+    font-size: 54px;
     font-family: 'Modak', sans-serif;
     padding: 10px;
 }
 
 .btn {
     margin-top: 10px;
+}
+
+
+@media screen and (max-width: 468px) {
+
+    #title {
+      font-size: 36px;
+    }
+
 }
