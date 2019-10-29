@@ -3,7 +3,7 @@ body {
     background-color: black;
    }
 
-#first-set { 
+#first-set, #second-set { 
     background-color: white;
     padding: 25px;
     margin-top: 20px;
@@ -12,17 +12,6 @@ body {
     font-family: 'Shadows Into Light', cursive;
     font-size: 22px;
     border-radius: 5px;
-}
-
-#second-set {
-    background-color: white;
-    padding: 25px;
-    margin-top: 20px;
-    height: fit-content;
-    margin-top: 10px;
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 22px;
-    border-radius: 3px;
 }
 
 .container {
