@@ -36,9 +36,8 @@
 
 <script>
 let anArrayOfUniqueNumbers = [];
-let firstSet = "";
-let secondSet = "";
 let firstSetClicked = false;
+let currentSong = "";
 let songs = [
 "Alabama Getaway",
 "Althea",
@@ -137,7 +136,7 @@ function showGenerator() {
 
 
 
-    let numberGenerator = function(arr) {
+let numberGenerator = function(arr) {
   if (arr.length >= 20) return;
   let newNumber = Math.floor(Math.random() * 73);
   if (arr.indexOf(newNumber) < 0) {
@@ -145,44 +144,31 @@ function showGenerator() {
   }
   numberGenerator(arr);
 };
-
 numberGenerator(anArrayOfUniqueNumbers);
 
 for (let i = 0; i < 10; i++) {
-        // console.log(anArrayOfUniqueNumbers[i]);
-        // console.log(songs[anArrayOfUniqueNumbers[i]]);
-        // firstSet.push(songs[anArrayOfUniqueNumbers[i]])
-        // $("#first-set").append("<p>" + songs[anArrayOfUniqueNumbers[i]] + "<p>");
         $("<p>" + songs[anArrayOfUniqueNumbers[i]] + "<p>").hide().appendTo("#first-set").fadeIn(1000); 
     }
-    // console.log(firstSet);
-    // $(firstSet).appendTo("#first-set").slideDown(1500);
 
-    // $("#first-set").html(firstSet);
-    console.log(firstSet);
-    // firstSet = [];
     firstSetClicked = true;
 
 }
 
 function secondSetGenerator() {
     for (let i = 0; i < 10; i++) {
-        // console.log(anArrayOfUniqueNumbers[i + 10]);
-        // console.log(songs[anArrayOfUniqueNumbers[i + 10]]);
-        // secondSet.push(songs[anArrayOfUniqueNumbers[i + 10]])
-        $("<p>" + songs[anArrayOfUniqueNumbers[i + 10]] + "<p>").hide().appendTo("#second-set").fadeIn(1000); 
-
+        if ((i + 10) === 19) {
+            currentSong = ("E: " + songs[anArrayOfUniqueNumbers[i + 10]])
+        }
+        else {
+            currentSong = songs[anArrayOfUniqueNumbers[i + 10]];
+        }
+        $("<p>" + currentSong + "<p>").hide().appendTo("#second-set").fadeIn(1000); 
     }
     
-    console.log(secondSet);
-    // secondSet = [];
     anArrayOfUniqueNumbers = [];
     firstSetClicked = false;
 
 }
-
-
-// console.log(anArrayOfUniqueNumbers);
 
 
 });
