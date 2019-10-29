@@ -1,0 +1,46 @@
+body {
+    background-image: url("../images/spadtastics.jpg");
+    background-color: black;
+   }
+
+#first-set { 
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    height: fit-content;
+    margin-top: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+#second-set {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    height: fit-content;
+    margin-top: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 22px;
+    border-radius: 3px;
+}
+
+.container {
+    background-color: darkviolet;
+    height: fit-content;
+    margin: 0% 5% 0% 5%;
+    padding: 10px 20px 20px 20px;
+    border-radius: 3px;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-family: 'Modak', sans-serif;
+    padding: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+}
