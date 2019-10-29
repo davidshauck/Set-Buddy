@@ -108,7 +108,9 @@ let songs = [
 "Aiko-Aiko",
 "Like a Road Leading Home",
 "Run For The Roses",
-"Tennessee Jed"
+"Tennessee Jed",
+"Drums",
+"Tuning"
 ];
 
 
@@ -135,7 +137,7 @@ function showGenerator() {
 
 let numberGenerator = function(arr) {
   if (arr.length >= 20) return;
-  let newNumber = Math.floor(Math.random() * 73);
+  let newNumber = Math.floor(Math.random() * 75);
   if (arr.indexOf(newNumber) < 0) {
     arr.push(newNumber);
   }
