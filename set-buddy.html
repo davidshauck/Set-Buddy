@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- local style -->
+  <link rel="stylesheet" href="gd.css">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet"><!-- load bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+    <div class="col-12" id="title">The Spadtastics Set Buddy </div>
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-12">The Spadtastics' Set Buddy </div>
+        </div> -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <button class="btn" id="first-set-button">First Set</button>
+                <div id="first-set"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <button class="btn" id="second-set-button">Second Set</button>
+                <div id="second-set"></div>
+            </div>
+        </div>
+    </div>
+
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+let anArrayOfUniqueNumbers = [];
+let firstSet = "";
+let secondSet = "";
+let firstSetClicked = false;
+let songs = [
+"Alabama Getaway",
+"Althea",
+"Big Railroad Blues",
+"Bird Song",
+"Brown-Eyed Women",
+"California Stars",
+"Candyman",
+"Cassidy",
+"Cold Rain and Snow",
+"Crazy Fingers",
+"Deal",
+"Feel Like A Stranger",
+"Golden Road",
+"Jack Straw",
+"Loser",
+"Might As Well",
+"Mission In The Rain",
+"Mississippi Half-Step",
+"Mighty Quinn",
+"New Speedway Boogie",
+"One More Saturday Night",
+"Peggy-O",
+"Promised Land",
+"Ramble On Rose",
+"Sugaree",
+"Tangled Up In Blue",
+"The Music Never Stopped",
+"They Love Each Other",
+"Touch Of Grey",
+"Casey Jones",
+"China Cat Sunflower",
+"I Know You Rider",
+"Dancin’ In The Street",
+"Estimated Prophet",
+"Eyes Of The World",
+"Hard To Handle",
+"He’s Gone",
+"Help On The Way",
+"Slipknot",
+"Fire On The Mountain",
+"Franklin’s Tower",
+"Goin’ Down The Road",
+"Lovelight",
+"Morning Dew",
+"Not Fade Away",
+"Playin’ in the Band",
+"Samson & Delilah",
+"Scarlet Begonias",
+"Shakedown Street",
+"Ship of Fools",
+"Sugar Magnolia",
+"St. Stephen",
+"Terrapin Station",
+"The Eleven",
+"The Other One",
+"The Wheel",
+"Truckin’",
+"Uncle John’s Band",
+"Viola Lee Blues",
+"Wharf Rat",
+"Bertha",
+"Brokedown Palace",
+"Powderfinger",
+"U.S. Blues",
+"We Bid You Goodnight",
+"Dark Star",
+"Good Lovin’",
+"Here Comes Sunshine",
+"Jack-a-Roe",
+"Aiko-Aiko",
+"Like a Road Leading Home",
+"Run For The Roses",
+"Tennessee Jed"
+];
+
+
+$(document).ready(function() {  
+
+$("#first-set-button").on("click", showGenerator);
+$("#second-set-button").on("click", x);
+
+function x() {
+    if (firstSetClicked === false) {
+        alert("You must start with the first set you jazzhole");
+    }
+    else {
+        secondSetGenerator();
+    }
+}
+
+
+function showGenerator() {
+    $("#first-set").empty();
+    $("#second-set").empty();
+
+
+
+    let numberGenerator = function(arr) {
+  if (arr.length >= 20) return;
+  let newNumber = Math.floor(Math.random() * 73);
+  if (arr.indexOf(newNumber) < 0) {
+    arr.push(newNumber);
+  }
+  numberGenerator(arr);
+};
+
+numberGenerator(anArrayOfUniqueNumbers);
+
+for (let i = 0; i < 10; i++) {
+        // console.log(anArrayOfUniqueNumbers[i]);
+        // console.log(songs[anArrayOfUniqueNumbers[i]]);
+        // firstSet.push(songs[anArrayOfUniqueNumbers[i]])
+        // $("#first-set").append("<p>" + songs[anArrayOfUniqueNumbers[i]] + "<p>");
+        $("<p>" + songs[anArrayOfUniqueNumbers[i]] + "<p>").hide().appendTo("#first-set").fadeIn(1000); 
+    }
+    // console.log(firstSet);
+    // $(firstSet).appendTo("#first-set").slideDown(1500);
+
+    // $("#first-set").html(firstSet);
+    console.log(firstSet);
+    // firstSet = [];
+    firstSetClicked = true;
+
+}
+
+function secondSetGenerator() {
+    for (let i = 0; i < 10; i++) {
+        // console.log(anArrayOfUniqueNumbers[i + 10]);
+        // console.log(songs[anArrayOfUniqueNumbers[i + 10]]);
+        // secondSet.push(songs[anArrayOfUniqueNumbers[i + 10]])
+        $("<p>" + songs[anArrayOfUniqueNumbers[i + 10]] + "<p>").hide().appendTo("#second-set").fadeIn(1000); 
+
+    }
+    
+    console.log(secondSet);
+    // secondSet = [];
+    anArrayOfUniqueNumbers = [];
+    firstSetClicked = false;
+
+}
+
+
+// console.log(anArrayOfUniqueNumbers);
+
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>
